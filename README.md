@@ -6,7 +6,7 @@ version: '3'
 services:
 
   db:
-    image: hasangnu/mariadb-deneme
+    image: hasangnu/mariadb
     container_name: hasangnu-mariadb
     environment:
       MYSQL_ROOT_PASSWORD: 'drupal'
@@ -30,3 +30,8 @@ services:
     restart: always
     ports:
       - 8088:8080
+```
+
+```
+docker-compose up -d
+```
