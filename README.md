@@ -30,4 +30,3 @@ services:
     restart: always
     ports:
       - 8088:8080
-```
