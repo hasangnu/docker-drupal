@@ -1,6 +1,6 @@
 # Drupal
 
-````yalm
+```yalm
 version: '3'
 
 services:
