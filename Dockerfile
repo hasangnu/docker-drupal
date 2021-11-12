@@ -16,6 +16,8 @@ RUN set -eux; \
 		libpq-dev \
 		libzip-dev \
 	; \
+	apt-get -y install git \
+	; \
 	\
 	docker-php-ext-configure gd \
 		--with-freetype \
