@@ -30,6 +30,7 @@
         "drush/drush": "~10",
         "h4cc/wkhtmltopdf-amd64": "^0.12.4",
         "mikehaertl/phpwkhtmltopdf": "~2.1",
+        "drupal/entity_print": "^2.4",
         "wikimedia/composer-merge-plugin": "^2.0",
         "drupal/mailsystem": "^4.3",
         "drupal/bootstrap_barrio": "^5.5"
