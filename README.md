@@ -18,7 +18,7 @@ services:
 
   drupal:
     image: hasangnu/php-drupal
-    container_name: hasangnu-drupal0
+    container_name: hasangnu-drupal
     ports:
       - 8880:80
     volumes:
