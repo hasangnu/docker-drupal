@@ -27,7 +27,11 @@
         "drupal/token": "^1.7",
         "drupal/smtp": "^1.0",
         "drupal/webform": "^6.0@beta",
-        "drush/drush": "~10"
+        "drush/drush": "~10",
+        "h4cc/wkhtmltopdf-amd64": "^0.12.4",
+        "mikehaertl/phpwkhtmltopdf": "~2.1",
+        "wikimedia/composer-merge-plugin": "^2.0"
+
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -67,6 +71,11 @@
             ],
             "themes/custom/{$name}": [
                 "type:drupal-custom-theme"
+            ]
+        },
+        "merge-plugin": {
+            "include": [
+                "modules/contrib/webform/composer.libraries.json"
             ]
         },
         "drupal-core-project-message": {
