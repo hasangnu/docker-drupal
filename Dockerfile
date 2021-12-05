@@ -16,8 +16,6 @@ RUN set -eux; \
 		libpq-dev \
 		libzip-dev \
 	; \
-	apt-get -y install git \
-	; \
 	\
 	docker-php-ext-configure gd \
 		--with-freetype \
@@ -45,9 +43,13 @@ RUN set -eux; \
 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
 	rm -rf /var/lib/apt/lists/*
 
-RUN set -eux; \
-	apt-get update; \
-	apt-get -y install git nano libxrender1 libfontconfig1 libxext6
+RUN apt-get update && apt-get install -y \
+	git \
+	nano \
+	libxrender1 \
+	libfontconfig1 \
+	libxext6 \
+	&& rm -rf /var/lib/apt/lists/*
 
 RUN { \
 		echo 'opcache.memory_consumption=128'; \
