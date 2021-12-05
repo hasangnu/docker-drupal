@@ -47,7 +47,7 @@ RUN set -eux; \
 
 RUN set -eux; \
 	apt-get update; \
-	apt-get -y install git
+	apt-get -y install git nano libxrender1 libfontconfig1 libxext6
 
 RUN { \
 		echo 'opcache.memory_consumption=128'; \
