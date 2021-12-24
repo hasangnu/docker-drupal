@@ -69,6 +69,9 @@
             "profiles/contrib/{$name}": [
                 "type:drupal-profile"
             ],
+            "profiles/custom/{$name}": [
+                "type:drupal-custom-profile"
+            ],
             "themes/contrib/{$name}": [
                 "type:drupal-theme"
             ],
