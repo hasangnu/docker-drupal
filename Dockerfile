@@ -1,3 +1,5 @@
+# hasangnu/docker-drupal php-7.4
+
 FROM php:7.4-apache-buster
 
 RUN set -eux; \
@@ -28,6 +30,7 @@ RUN set -eux; \
 		pdo_mysql \
 		pdo_pgsql \
 		zip \
+		bcmath \
 	; \
 	\
 	apt-mark auto '.*' > /dev/null; \
@@ -46,9 +49,12 @@ RUN set -eux; \
 RUN apt-get update && apt-get install -y \
 	git \
 	nano \
+	unzip \
+	wget \
 	libxrender1 \
 	libfontconfig1 \
 	libxext6 \
+	ssl-cert \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN { \
@@ -59,6 +65,15 @@ RUN { \
 		echo 'opcache.fast_shutdown=1'; \
                 echo 'memory_limit=-1'; \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
+
+RUN { \
+	echo 'upload_max_filesize = 16M'; \
+	echo 'post_max_size = 16M'; \
+	} > /usr/local/etc/php/conf.d/upload-recommended.ini
+
+RUN a2enmod ssl
+
+RUN a2ensite default-ssl.conf
 
 COPY --from=composer /usr/bin/composer /usr/local/bin/
 
